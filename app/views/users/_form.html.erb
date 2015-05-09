@@ -1,0 +1,49 @@
+<div id="page_wrapper">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :full_name, "ФИО" %><br>
+    <%= f.text_field :full_name %>
+  </div>
+  <div class="field">
+    <%= f.label :instagram %><br>
+    <%= f.text_field :instagram %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :vk, "Вктонтакте" %><br>
+    <%= f.text_field :vk %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_mail, "Почта" %><br>
+    <%= f.text_field :cont_mail %>
+  </div>
+  <div class="field">
+    <%= f.label :description, 'Обо мне' %><br>
+    <%= f.text_area :description, rows: 4 %>
+  </div>
+  <div class="field">
+  <%= f.file_field :photo %>
+    <% if not @user.photo.nil? %>
+      <%= image_tag @user.photo ,  :size => "150x200"%>
+    <% end %>  
+  </div>      
+  <div class="actions">
+    <%= f.submit "Сохранить"%>
+  </div>
+<% end %>
+</div>

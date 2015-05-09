@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="center"><%=  @subcategory.title %></h1>
+
+    <% Post.where(subcategory_id: @subcategory.id).each do |post| %>
+        <div class="post_wrapper">
+   			 <h2 class="title"><%= link_to post.title, post %></h2>
+    		 <p class="date_and_author"><%= post.created_at.strftime("%B %d, %Y") %></p>
+ 		 </div> 
+    <% end %>

@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+#menu li span {
+  position: absolute;
+  left: 16em;
+  margin-top: -1.4em;
+  width: 10em;
+  display: none;
+	}
+#menu li:hover span { display: block;}
+#menu li span a { display: inline; }
+
+/*#menu {
+	width: 200px;
+	margin: 10px;
+	}*/
+ 
+#menu li a {
+	height: 32px;
+  	height: 24px;
+	text-decoration: none;
+	font: 14px ; 
+	}	
+ 
+#menu li a:link, #menu li a:visited {
+	color: #D3D3D9;
+	display: block;
+	/*background:  url(menu.gif);*/
+	padding: 8px 0 0 35px;
+	}
+ 
+#menu li a:hover {
+	color: #0D1FD2;
+	/*background:  url(menu.gif) 0 -32px;*/
+	padding: 8px 0 0 35px;
+ 
+	}
+ 
+#menu li span {
+	position: absolute;
+  left: 16em;
+  margin-top: -1.4em;
+  width: 10em;
+  display: none;
+	}
+ 
+#menu li:hover span { display: block;}
+#menu li span a { display: inline; }
+
+
+#list3 { }
+#list3 ul { list-style-image: url(arrow.png); color:#eee; font-size:18px; }
+#list3 ul li { line-height:30px; } 

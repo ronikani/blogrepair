@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="center">Категории</h1>
+
+
+<div id="list3">
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.title, category %> 
+          <% if user_signed_in? %>
+          | <%= link_to 'Редактировать', edit_category_path(category) %> |
+          <%= link_to 'Удалить', category, method: :delete, data: { confirm: 'Вы уверены?' } %>
+          <% end %>
+          <ul>
+		     <% Subcategory.where(category_id: category.id).each do |sub| %>
+		     <li><%= link_to sub.title, sub %> 
+          <% if user_signed_in? %>
+          | <%= link_to 'Редактировать', edit_subcategory_path(sub) %> |
+          <%= link_to 'Удалить', sub, method: :delete, data: { confirm: 'Вы уверены?' } %>
+          <% end %>
+         </li>
+		     <% end %>
+		  </ul>
+      </li>
+     <% end %>
+  </ul>
+</div>

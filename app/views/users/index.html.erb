@@ -1,0 +1,18 @@
+<div id="page_wrapper">
+    <% @users.each do |user| %>
+      <div id="profile_image">
+        <%= image_tag user.photo, id: "profile_image" %>
+      </div>  
+      <div id="content">
+        <h1 id="content" ><%= user.full_name %></h1>
+        <p><%= user.full_name %></p>
+        <p>instagram: <%= user.instagram %></p>
+        <p>Twitter: <%= user.twitter %></p>
+        <p>Вконтакте: <%= user.vk %></p>
+        <p>Почта: <%= user.cont_mail %></p>
+        <p><%= user.description %></p>
+      </div>
+    <% end %>
+</div>  
+
+  

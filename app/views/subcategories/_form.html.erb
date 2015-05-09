@@ -1,0 +1,33 @@
+<div id="page_wrapper">
+<%= form_for(@subcategory) do |f| %>
+  <% if @subcategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subcategory.errors.count, "error") %> prohibited this subcategory from being saved:</h2>
+
+      <ul>
+      <% @subcategory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p><%= f.label :title, "Название" %></p>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "Категория" %> <br />
+    <%= collection_select(:subcategory,:category_id,@categories,:id,:title, {}, id: "simple-example") %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>
+</div>
+<script>
+      $(document).ready(function() {
+    $('select#simple-example').select2();
+    });
+</script>
+
